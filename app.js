@@ -10,7 +10,7 @@ app.get('/health', (req, res) => {
 });
 app.get('/version', (req, res) => {
   res.send('v7') // change this string to ensure a new version deployed
-})
+});
 app.listen(PORT, () => {
   console.log('server started on port 5000') // eslint-disable-line no-console
 })
