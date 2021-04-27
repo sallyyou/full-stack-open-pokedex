@@ -33,4 +33,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: The ${{ github.repository }} Run ${{ github.workflow }} ${{job.status}} On branch ${{github.ref}}.
+          args: ${{ github.repository }} Run ${{ github.workflow }} ${{job.status}} On branch ${{github.ref}}.
