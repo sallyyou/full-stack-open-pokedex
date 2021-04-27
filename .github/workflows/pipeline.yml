@@ -27,3 +27,10 @@ jobs:
           command: npm run test:e2e
           start: npm run start
           wait-on: http://localhost:5000
+      - uses: actions/checkout@master
+      - name: send message to group
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: ${{ github.repository }} Run ${{ github.workflow }} ${{job.status}} On branch ${{github.ref}}.
