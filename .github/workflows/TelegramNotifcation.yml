@@ -18,4 +18,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO_ME }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: ${{ job.status}}.
+        args: ${{ job.status}}
