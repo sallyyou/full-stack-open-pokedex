@@ -12,7 +12,7 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: The ${{ github.repository }} Run ${{ github.workflow }} ${{job.status}}. ${{github.sha}} ${{github.event.name}} on branch ${{github.ref}}.
+        args: The ${{ github.repository }} Run ${{ github.workflow }} ${{job.status}} On branch ${{github.ref}}.
     # - name: send message to admin
     #   uses: appleboy/telegram-action@master
     #   with:
