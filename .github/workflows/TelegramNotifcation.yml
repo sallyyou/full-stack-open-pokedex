@@ -7,9 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: send custom message with args
+    - name: send message to group
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: The ${{ github.event_name }} event triggered first step again.
+        args: The ${{ github.event_name }} event triggered.
+    - name: send message to admin
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO_ME }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        args: ${{ job.status}}.
